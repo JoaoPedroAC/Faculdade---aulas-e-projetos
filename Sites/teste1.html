@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minha Faculdade</title>
+    <style>
+      /* Vai fazer o bloco html e body serem do mesmo tamanho*/
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      /* Vai centraliar o bloco da frase*/
+      .header {
+        text-align: center;
+        width: 100%;
+      }
+      p {
+        -webkit-background-clip: text; /* Vai fazer o texto ser preenchido com o background */
+        -webkit-text-fill-color: transparent; /* Vai deixar o texto transparente */
+        display: inline-block;
+        background-image: linear-gradient(
+          to right,
+          rgb(99, 168, 99) 25%,
+          black
+        );
+        font-size: 80px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <p><b>Descomplica é minha faculdade!</b></p>
+    </div>
+  </body>
+</html>
