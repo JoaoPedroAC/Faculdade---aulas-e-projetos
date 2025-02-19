@@ -1,0 +1,11 @@
+<html>
+  <body>
+    <pre id="app"></pre>
+
+    <script>
+      const objectJson = { nome: "João", sobrenome: "Pedro", old: 25, city: "vila velha" };
+      const textFormatted = JSON.stringify(objectJson, null, 2);
+      document.getElementById("app").textContent = textFormatted;
+    </script>
+  </body>
+</html>
