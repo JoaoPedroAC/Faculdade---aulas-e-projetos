@@ -5,7 +5,12 @@ class Imovel {
     this.tamanho = tamanho;
   }
   descrever() {
-    throw new Error("Método descrever não implementado");
+    throw new Error("\nMétodo descrever não implementado"); // Exceção para caso o método não seja implementado
+  }
+  validar() {
+    if (!this.endereco || !this.tamanho) { // caso não tenha endereço ou tamanho
+      throw new Error("\nDados inválidos para o imóvel"); 
+    }
   }
 }
 // Definição de classe minha "Casa" classes começam com letra maiúscula
@@ -40,11 +45,16 @@ class Casa extends Imovel {
 
   // Método para descrever a casa
   descrever() {
-    let descricao = `Casa esta localizada em ${this.endereco} seu tamanho é de ${this.tamanho}m² e sua cor é ${this._cor} e tem ${this._numQuartos} quartos`;
+    try {
+      this.validar();
+      let descricao = `Casa esta localizada em ${this.endereco} seu tamanho é de ${this.tamanho}m² e sua cor é ${this._cor} e tem ${this._numQuartos} quartos`;
 
-    descricao += this._temGaragem ? " e tem garagem." : " e não tem garagem.";
+      descricao += this._temGaragem ? " e tem garagem." : " e não tem garagem.";
 
-    return descricao;
+      return descricao;
+    } catch (error) {
+      throw new Error("\nErro ao descrever a casa", error.message);
+    }
   }
 }
 
@@ -61,26 +71,36 @@ class CasaLuxuosa extends Casa {
     this._temPiscina = novoTemPiscina;
   }
   descrever() {
-    let descricao = super.descrever();
-    if (this._temPiscina) {
-      descricao += " Além disso, tem piscina.";
-    } else {
-      descricao += " Além disso, não tem piscina.";
+    try {
+      let descricao = super.descrever();
+      if (this._temPiscina) {
+        descricao += " Além disso, tem piscina.";
+      } else {
+        descricao += " Além disso, não tem piscina.";
+      }
+      return descricao;
+    } catch (error) {
+      throw new Error("\nErro ao descrever a casa luxuosa", error.message);
     }
-    return descricao;
   }
 }
 // função para descrever um imovel (polimorfismo)
 function descreverImovel(imovel) {
-  console.log(imovel.descrever());
+  try {
+    console.log(imovel.descrever());
+  } catch (error) {
+    console.error("\nErro ao descrever o imóvel", error.message);
+  }
 }
 
 // Criação de objeto  (instância da classe Casa)
-const minhaCasa = new Casa("Av. Titui", 90, "azul", 3, true);
+const minhaCasa = new Casa("Av. Titui", 90, "azul", 3, false);
 const casaVizinho = new CasaLuxuosa("Rua Golden Street", 1000, "vermelha", 3, true, true);
+const casaInvalida = new Casa("", 0, "", "", false);
 // console.log(minhaCasa.descrever());
 // console.log(casaVizinho.descrever());
 
 // manipulação dos objetos e exibições das descriçõesusando o polimorfismo
 descreverImovel(minhaCasa);
 descreverImovel(casaVizinho);
+descreverImovel(casaInvalida);  
