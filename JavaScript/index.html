@@ -77,6 +77,13 @@
       </section>
     </main>
 
+    <div class="event" style="backgroud-color: lightblue; border: 1px solid blue; padding: 1em">
+      <h2>Eventos</h2>
+      <h4 id="mouseOver">Passe o mouse aqui!</h4>
+      <button id="mouseDown">Pressione aqui!</button>
+      <input type="text" id="keyPress" placeholder="Pressione uma tecla" />
+    </div>
+
     <footer>
       <p>&copy; 2025 Exemplo de Página HTML</p>
     </footer>
@@ -84,5 +91,124 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+      // usando getElementById() para pegar o elemento pelo ID
+      const domPorID = document.getElementById("nome");
+      domPorID.style.backgroundColor = "lightgreen";
+
+      // usando getElementsByTagName() para pegar todos os elementos de um tipo
+      const h2 = document.getElementsByTagName("h2");
+      for (hh2 of h2) {
+        hh2.style.color = "blue";
+      }
+
+      // usando getElementsByClassName() para pegar todos os elementos de uma classe
+      const formGroup = document.getElementsByClassName("form-group")[0];
+      formGroup.style.border = "1px solid red";
+
+      // usando getElementsByName() para pegar todos os elementos de um nome
+      const email = document.getElementsByName("email")[0];
+      email.style.backgroundColor = "lightblue";
+
+      // usando querySelector() para pegar o primeiro elemento que corresponde ao seletor
+      const primeiroH2 = document.querySelector("h2");
+      primeiroH2.style.backgroundColor = "yellow";
+
+      // usando querySelectorAll() para pegar todos os elementos que correspondem ao seletor
+      const todosH3 = document.querySelectorAll("h3");
+      for (h3 of todosH3) {
+        h3.style.backgroundColor = "lightgray";
+      }
+      // Criando um novo elemento
+      const novaDiv = document.createElement("div");
+
+      // Difinindo atributos para o novo elemento
+      novaDiv.setAttribute("class", "alert alert-info");
+      novaDiv.setAttribute("role", "alert");
+
+      // Adicionando conteúdo ao novo elemento
+      novaDiv.textContent = "Este é um novo elemento criado com JavaScript";
+
+      // Adicionando o novo elemento ao final do corpo da página
+      document.body.appendChild(novaDiv);
+
+      // Manipulação de eventos
+      const botao = document.querySelector("button[type='submit']");
+      botao.addEventListener("submit", function (event) {
+        if (document.querySelector("form").checkValidity()) {
+          return event.preventDefault();
+        } else {
+          alert("Formulário enviado com sucesso!");
+          document.querySelector("form").reset();
+        }
+      });
+
+      // Navegação no DOM
+      const secondSection = document.querySelectorAll("section")[1];
+      const nextSection = secondSection.nextElementSibling;
+      if (nextSection) {
+        nextSection.style.border = "2px dashed blue";
+      }
+
+      // removendo um elemento
+      const footer = document.querySelector("footer");
+      footer.remove();
+
+      // evento de mouseover e mouseout
+      const mouseOver = document.getElementById("mouseOver");
+      mouseOver.addEventListener("mouseover", function () {
+        mouseOver.style.backgroundColor = "lightgreen";
+      });
+
+      const mouseOut = document.getElementById("mouseOver");
+      mouseOut.addEventListener("mouseout", function () {
+        mouseOut.style.backgroundColor = "inherit";
+      });
+
+      // evento de mouseup e mousedown
+      const mouseUp = document.getElementById("mouseDown");
+      mouseUp.addEventListener("mouseup", function () {
+        mouseUp.textContent = "Pressione o botão";
+        mouseUp.style.backgroundColor = "inherit";
+      });
+      const mouseDown = document.getElementById("mouseDown");
+      mouseDown.addEventListener("mousedown", function () {
+        mouseUp.textContent = "Solte o botão";
+        mouseDown.style.backgroundColor = "lightgreen";
+      });
+
+      // evento de keydown, keyup e keypress
+      const keyUp = document.getElementById("keyPress");
+      keyUp.addEventListener("keyup", function (event) {
+        console.log("Soltou", event.key);
+      });
+      const keyDown = document.getElementById("keyPress");
+      keyDown.addEventListener("keydown", function (event) {
+        console.log("Pressionou", event.key);
+      });
+      const keyPress = document.getElementById("keyPress");
+      keyPress.addEventListener("keypress", function (event) {
+        console.log("segurou", event.key);
+      });
+
+      // evento geral de tempo e foco
+      let time = 1;
+      const inputFocus = document.getElementById("keyPress");
+      inputFocus.addEventListener("focus", function () {
+        inputFocus.style.backgroundColor = "lightblue";
+        setTimeout(function () {
+          console.warn("Passou", time++, "segundo");
+        }, 1000);
+      });
+      inputFocus.addEventListener("blur", function () {
+        inputFocus.style.backgroundColor = "inherit";
+      });
+      
+      // evento de tempo
+      setInterval(function () {
+        let timeSomado = time++;
+        console.log("Seu tempo inativo:", timeSomado * 5, "segundo");
+      }, 5000);
+    </script>
   </body>
 </html>
