@@ -84,6 +84,11 @@
       <input type="text" id="keyPress" placeholder="Pressione uma tecla" />
     </div>
 
+    <section id="apiSection">
+      <h2>API</h2>
+      <button type="button" class="btn btn-info" id="callAPI">Chamar a API!</button>
+    </section>
+
     <footer>
       <p>&copy; 2025 Exemplo de Página HTML</p>
     </footer>
@@ -192,6 +197,7 @@
       });
 
       // evento geral de tempo e foco
+      /*
       let time = 1;
       const inputFocus = document.getElementById("keyPress");
       inputFocus.addEventListener("focus", function () {
@@ -209,6 +215,8 @@
         let timeSomado = time++;
         console.log("Seu tempo inativo:", timeSomado * 5, "segundo");
       }, 5000);
+      */
     </script>
+    <script type="text/javascript" src="assets/script/api.js"></script>
   </body>
 </html>
