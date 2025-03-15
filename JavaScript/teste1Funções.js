@@ -4,8 +4,10 @@ function saudacao(msg) {
 }
 console.log(saudacao("Olá, mundo!"));
 
-let novaSaudacao = function() {
-  let nomes = ['João', 'Maria', 'José'];
-  let muitosNomes = nomes.map((nome) =>{console.log(`\n${saudacao("olá")}, ${nome}!`);});
-}
+let novaSaudacao = function () {
+  let nomes = ["João", "Maria", "José"];
+  let muitosNomes = nomes.map((nome) => {
+    console.log(`\n${saudacao("olá")}, ${nome}!`);
+  });
+};
 novaSaudacao();
