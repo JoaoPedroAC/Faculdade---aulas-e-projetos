@@ -1,0 +1,39 @@
+Aqui vai alguns exemplos da linguagem PL/SQL (oracle) dentro do SQL Plus
+
+set serveroutput on -- É para permitir o servidor mostrar mensagens
+
+ACCEPT P_NOME PROMPT 'DIGITE O NOME DE UMA FUNCIONARIO '; -- ACCEPT é para liberar interação e o prompt deve ser para registrar na memoria a resposta
+ACCEPT P_SAL PROMPT 'DIGITE O SALARIO DO FUNCIONARIO ';
+
+DECLARE
+	V_NOME VARCHAR(30) := '&P_NOME';
+	V_SAL_MES NUMBER(9,2) := &P_SAL;
+	V_SAL_ANUAL NUMBER(9,2);
+BEGIN
+	V_SAL_ANUAL := V_SAL_MES * 12;
+	DBMS_OUTPUT.PUT_LINE('O SALARIO ANUAL DO ' || V_NOME || ' É DE R$ ' || V_SAL_ANUAL); -- esse DBMS_output é para imprimir na tela a respota
+END;
+/ << É para finalizar o comando e executar>>
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Aqui é outro exemplo mas agora com dados existentes do banco de dados
+primeiro no SQL Plus tem que se conectar ao scott, que seria CONNECT scott/tiger@//localhost:1521/FREEPDB1 ou no bash(cmd) sqlplus scott/tiger@//localhost:1521/FREEPDB1
+
+set serveroutput on
+
+DECLARE
+	V_DEPTNO NUMBER(2);
+	V_LOC VARCHAR2(15);
+BEGIN
+	SELECT DEPTNO, LOC
+	INTO V_DEPTNO, V_LOC
+	FROM DEPT
+	WHERE DNAME = 'SALES';
+DBMS_OUTPUT.PUT_LINE('O código do departamento é ' || V_DEPTNO || ' e a sua localização é ' || V_LOC);
+
+END;
+/
+
+<<qualquer coisa aqui dentro é considerado um MARCADOR, funciona como ROTULO no javascript>>

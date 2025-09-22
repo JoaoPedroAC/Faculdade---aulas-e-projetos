@@ -1,0 +1,133 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "AtributosDnD",
+      "request": "launch",
+      "mainClass": "AtributosDnD.AtributosDnD",
+      "projectName": "JAVA_ecfa3df2"
+    },
+    {
+      "type": "java",
+      "name": "Current File",
+      "request": "launch",
+      "mainClass": "${file}"
+    },
+    {
+      "type": "java",
+      "name": "Aritmetica",
+      "request": "launch",
+      "mainClass": "Aritmetica",
+      "projectName": "JAVA_ecfa3df2"
+    },
+    {
+      "type": "java",
+      "name": "BubbleSort",
+      "request": "launch",
+      "mainClass": "BubbleSort",
+      "projectName": "JAVA_ecfa3df2"
+    },
+    {
+      "type": "java",
+      "name": "CadastroDosAlunos",
+      "request": "launch",
+      "mainClass": "CadastroAluno.CadastroDosAlunos",
+      "projectName": "JAVA_ecfa3df2"
+    },
+    {
+      "type": "java",
+      "name": "Loop",
+      "request": "launch",
+      "mainClass": "Loop",
+      "projectName": "JAVA_ecfa3df2"
+    },
+    {
+      "type": "java",
+      "name": "Matrizes",
+      "request": "launch",
+      "mainClass": "Matrizes",
+      "projectName": "JAVA_ecfa3df2"
+    },
+    {
+      "type": "java",
+      "name": "MeuSegundoProjeto",
+      "request": "launch",
+      "mainClass": "MeuSegundoProjeto",
+      "projectName": "JAVA_ecfa3df2"
+    },
+    {
+      "type": "java",
+      "name": "ProgModularizacao",
+      "request": "launch",
+      "mainClass": "ProgModularizacao",
+      "projectName": "JAVA_ecfa3df2"
+    },
+    {
+      "type": "java",
+      "name": "ProgramaSwing",
+      "request": "launch",
+      "mainClass": "ProgramaSwing",
+      "projectName": "JAVA_ecfa3df2"
+    },
+    {
+      "type": "java",
+      "name": "Test",
+      "request": "launch",
+      "mainClass": "Test",
+      "projectName": "JAVA_ecfa3df2"
+    },
+    {
+      "type": "java",
+      "name": "introducao",
+      "request": "launch",
+      "mainClass": "introducao",
+      "projectName": "JAVA_ecfa3df2"
+    },
+    {
+      "type": "java",
+      "name": "Somar",
+      "request": "launch",
+      "mainClass": "matrizes.Somar",
+      "projectName": "JAVA_ecfa3df2"
+    },
+    {
+      "type": "java",
+      "name": "operadores",
+      "request": "launch",
+      "mainClass": "operadores",
+      "projectName": "JAVA_ecfa3df2"
+    },
+    {
+      "type": "java",
+      "name": "pilha",
+      "request": "launch",
+      "mainClass": "pilha.pilha",
+      "projectName": "JAVA_ecfa3df2"
+    },
+    {
+      "type": "java",
+      "name": "recursao2",
+      "request": "launch",
+      "mainClass": "recursao2.recursao2",
+      "projectName": "JAVA_ecfa3df2"
+    },
+    {
+      "type": "java",
+      "name": "testes",
+      "request": "launch",
+      "mainClass": "testes",
+      "projectName": "JAVA_ecfa3df2"
+    },
+    {
+      "type": "java",
+      "name": "Somar(1)",
+      "request": "launch",
+      "mainClass": "vetores.Somar",
+      "projectName": "JAVA_ecfa3df2"
+    }
+  ]
+}
