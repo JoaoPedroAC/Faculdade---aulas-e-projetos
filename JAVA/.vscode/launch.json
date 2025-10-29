@@ -6,6 +6,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "ArrayJava",
+      "request": "launch",
+      "mainClass": "ArrayList.ArrayJava",
+      "projectName": "JAVA_ecfa3df2"
+    },
+    {
+      "type": "java",
       "name": "AtributosDnD",
       "request": "launch",
       "mainClass": "AtributosDnD.AtributosDnD",
